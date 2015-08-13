@@ -11,7 +11,7 @@ class Livro
 		@categoria = categoria
 	end
 	
-	def to_s
+	def to_s #sobrescrita do método to_s
 		"Autor: #{@autor}, ISBN: #{@isbn}, páginas: #{@numero_de_paginas}, Categoria: #{@categoria}"
 	end
 
