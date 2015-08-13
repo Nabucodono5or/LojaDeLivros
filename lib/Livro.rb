@@ -12,10 +12,8 @@ class Livro
 	end
 	
 	def to_s
-		"Autor: #{@autor}, ISBN: #{@isbn}, páginas: #{@numero_de_paginas}, #{@categoria}"
+		"Autor: #{@autor}, ISBN: #{@isbn}, páginas: #{@numero_de_paginas}, Categoria: #{@categoria}"
 	end
 
 
 end	
-
-
