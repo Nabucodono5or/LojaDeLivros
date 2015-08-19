@@ -2,6 +2,7 @@
 class Livro
 	attr_accessor :valor
 	attr_reader :categoria
+	attr_reader :autor
 	
 	def initialize(autor, isbn = "1", numero_de_paginas, valor, categoria)
 		@autor = autor
