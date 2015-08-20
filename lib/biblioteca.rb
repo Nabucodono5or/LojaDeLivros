@@ -15,9 +15,9 @@ class Biblioteca
 		@livros.values.flatten
 	end	
 		
-	def livros_por_categoria(categoria)
+	def livros_por_categoria(categoria, &bloco)
 		@livros[categoria].each do |livro|
-		yield livro if block_given?
+		bloco.call livro
 		end
 	end	
 end	
