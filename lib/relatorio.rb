@@ -9,6 +9,6 @@ class Relatorio
 	end	
 	
 	def total
-		@biblioteca.livro.inject(0){|tot,liv| tot +=liv.valor}	
+		@biblioteca.livro.map(&:valor).inject(0) {|tot, valor| tot += valor}	
 	end	
 end
