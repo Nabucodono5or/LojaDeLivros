@@ -4,11 +4,14 @@ class Biblioteca
 
 	def initialize
 		@livros = {} # inicializa com um hash
+		@banco = BancoDeArquivos.new
 	end
 
 	def adciona(livros)
-		@livros[livros.categoria] ||= []
-		@livros[livros.categoria] << livros
+		salva livros do
+			@livros[livros.categoria] ||= []
+			@livros[livros.categoria] << livros
+		end
 	end
 	
 	def livro
@@ -20,5 +23,13 @@ class Biblioteca
 			imprime_p.call livro
 			imprime_puts.call livro
 		end
+	end
+
+	private
+	
+	def salva(livros)
+		@banco.salva livros
+		yield
 	end	
+	
 end	
