@@ -6,3 +6,51 @@ numero_de_paginas: 247
 valor: 69.9
 categoria: :testes
 
+---
+- !ruby/object:Livro
+  titulo: TDD
+  autor: Mauricio Aniche
+  isbn: '123454'
+  numero_de_paginas: 247
+  valor: 69.9
+  categoria: :testes
+
+---
+- !ruby/object:Livro
+  titulo: TDD
+  autor: Mauricio Aniche
+  isbn: '123454'
+  numero_de_paginas: 247
+  valor: 69.9
+  categoria: :testes
+- !ruby/object:Livro
+  titulo: TDD
+  autor: Mauricio Aniche
+  isbn: '123454'
+  numero_de_paginas: 247
+  valor: 69.9
+  categoria: :testes
+
+---
+- !ruby/object:Livro
+  titulo: TDD
+  autor: Mauricio Aniche
+  isbn: '123454'
+  numero_de_paginas: 247
+  valor: 69.9
+  categoria: :testes
+- !ruby/object:Livro
+  titulo: TDD
+  autor: Mauricio Aniche
+  isbn: '123454'
+  numero_de_paginas: 247
+  valor: 69.9
+  categoria: :testes
+- !ruby/object:Livro
+  titulo: Web Design Responsivo
+  autor: Tárcio Zemel
+  isbn: '45256'
+  numero_de_paginas: 240
+  valor: 69.9
+  categoria: :web
+

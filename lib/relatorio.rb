@@ -5,10 +5,10 @@ class Relatorio
 	end	
 	
 	def titulos
-	@biblioteca.livro.map &:titulo
+	@biblioteca.livros.map &:titulo
 	end	
 	
 	def total
-		@biblioteca.livro.map(&:valor).inject(:+) # {|tot, valor| tot += valor}	
+		@biblioteca.livros.map(&:valor).inject(:+) # {|tot, valor| tot += valor}	
 	end	
 end
