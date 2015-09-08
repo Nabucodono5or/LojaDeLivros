@@ -8,31 +8,33 @@ class Biblioteca
 		@banco = BancoDeArquivos.new
 	end
 
-	def adciona(livro)
-		salva livro do
-			livros << livro
+	def adciona(midia)
+		salva midia do
+			midias << midia
 		end
 	end
 	
 		
 	def livros_por_categoria(categoria)
-		livros.select { |livro| livro.categoria == categoria}
+		midias.select do |midia|
+			midia.categoria == categoria if midia.respond_to? :categoria
+		end	
 	end
 	
 
 	def each
-		livros.each { |livro| yield livro}
+		midias.each { |midia| yield midia}
 	end	
 	
-	def livros
-		@livros ||= @banco.carrega
+	def midias
+		@midias ||= @banco.carrega
 	end	
 	
 	
 	private
 		
-	def salva(livros)
-		@banco.salva livros
+	def salva(midia)
+		@banco.salva midia
 		yield
 	end	
 	

@@ -16,3 +16,15 @@ isbn: '45256'
 numero_de_paginas: 240
 categoria: :web
 
+--- !ruby/object:DVD
+valor: 98.0
+desconto: 0.1
+titulo: Windows for Dummies
+categoria: :sistemas_operacionais
+
+--- !ruby/object:DVD
+valor: 98.9
+desconto: 0.1
+titulo: Windows 7 fo Dummies
+categoria: :sistemas_operacionais
+
