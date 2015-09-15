@@ -1,25 +1,33 @@
 # encoding: utf-8
 class Revista
+	attr_reader :titulo, :id
+	attr_accessor :valor #para permitir escrita no atributo valor
 	
-	@id = 0
-	
-	def initialize (titulo)
-		@id = self.class.id
+	def initialize(titulo,valor)
 		@titulo = titulo
-	end
-	# um modo de criar um método na class
-	class << self
-		def id
-			@id +=1
-		end
+		@valor = valor
+		@id = self.class.next_id #gerará um id automatico do método next_id
 	end	
 	
-	def id
-		@id
+	def save
+		File.open("db/revistas/#{@id}.yaml", "w") do |file|
+			file.puts serialize
+		end	
+	
 	end	
 	
-	def titulo
-		"Título : #{@titulo}"
+	def self.find(id)
+		YAML.load File.open("db/revistas/#{id}.yaml","r")
+	end	
+	
+	private
+	
+	def self.next_id
+		Dir.glob("db/revistas/*.yaml").size + 1
+	end	
+	
+	def serialize
+		YAML.dump self
 	end	
 	
 end
