@@ -1,7 +1,9 @@
 # encoding: utf-8
 class Revista
+	
 	attr_reader :titulo, :id
 	attr_accessor :valor #para permitir escrita no atributo valor
+	
 	
 	def initialize(titulo,valor)
 		@titulo = titulo
@@ -17,6 +19,9 @@ class Revista
 	end	
 	
 	def self.find(id)
+		raise DocumentNotFound,"Arquivo db/revistas/#{id} não encontrado.",caller
+			unless File.exists?("db/revistas/#{id}.yaml")
+		end		
 		YAML.load File.open("db/revistas/#{id}.yaml","r")
 	end	
 	
