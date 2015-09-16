@@ -27,19 +27,52 @@ module ActiveFile
 			YAML.load File.open("db/revistas/#{id}.yaml","r")
 		end
 		
-		def self.next_id
+		def next_id
 			Dir.glob("db/revistas/*.yaml").size + 1
 		end	
 		
 		def field(name)
 			@fields ||=[]
 			@fields << name
+			
+			get = %Q{
+				def #{name}
+					@#{name}
+				end
+				}
+				
+				
+			set = %Q{
+				def #{name}=(valor)
+					@#{name} = valor
+				end
+				}
+				
+			self.class_eval get
+			self.class_eval set
+	
 		end	
 		
 	end	
+		
 	
 	def self.included(base)
 		base.extend ClassMethods
+		base.class_eval do
+			attr_accessor :id, :destroyed, :new_record
+			
+			def initialize(parameters = {})
+				@id = self.class.next_id
+				@destroyed = false
+				@new_record = true
+				
+				parameters.each do | key, value|
+					instance_variable_set "@#{key}",value
+				end	
+			end	
+
+		end
+
 	end	
 	
 	private
