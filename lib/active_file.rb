@@ -50,7 +50,37 @@ module ActiveFile
 				
 			self.class_eval get
 			self.class_eval set
-	
+			
+			
+			def method_missing(name,*args, &block)
+				argument = args.first
+				field = name.to_s.split("_").last
+				super if @fields.include? field
+				
+				load_all.select do |object|
+					should_select? object, field, argument
+				end	
+			end
+		end	
+		
+		private
+		
+		def should_select?(object, field, argument)
+			if argument.kind_of? Regexp
+				object.send(field) =~ argument
+			else
+				object.send(field) == argument
+			end	
+		end	
+		
+		def load_all
+			Dir.glob('db/revistas/*.yaml').map do |file|
+				deserialize file
+			end	
+		end	
+		
+		def deserialize(file)
+			YAML.load File.open(file,"r")
 		end	
 		
 	end	
