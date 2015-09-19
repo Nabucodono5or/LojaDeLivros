@@ -53,8 +53,10 @@ module ActiveFile
 			
 			
 			def method_missing(name,*args, &block)
+				super unless name =~ /^find_by_(.*)/
+				
 				argument = args.first
-				field = name.to_s.split("_").last
+				field = $1
 				super if @fields.include? field
 				
 				load_all.select do |object|
