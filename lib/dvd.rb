@@ -1,8 +1,8 @@
 # encoding: utf-8
 class DVD < Midia
 	attr_reader :titulo
-
-	extend FormatadorMoeda #métodos gerados são tratados como da própria classe
+	
+	include FormatadorMoeda 	
 	
 	formata_moeda :valor_com_desconto, :valor
 	
