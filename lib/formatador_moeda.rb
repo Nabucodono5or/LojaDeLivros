@@ -1,6 +1,4 @@
-# carregando ruby gems
-require 'rubygems'
-# Carregando a gem brnumeros
+require 'bundler/setup'
 require 'brnumeros'
 
 module FormatadorMoeda
