@@ -1,4 +1,5 @@
 # coding: utf-8
+require "brnumeros"
 require "active_file/version"
 require "yaml"
 require "FileUtils"
