@@ -8,8 +8,8 @@ gem.name        = "active_file"
 gem.version     = ActiveFile::VERSION
 gem.description = "Just a file system database"
 gem.summary     = "Just a file system database"
-gem.author      = "Lucas Souza"
-gem.files       = Dir["{lib/**/*.rb,README.md,Rakefile,active_file.gemspec}"]
+gem.author      = "Lucas Souza" 
+gem.files       = Dir["{lib/**/*.rb,lib/tasks/*.rake,README.md,Rakefile,active_file.gemspec}"]
 
 # dependência do código com a gem brnumeros
 gem.add_dependency "brnumeros","~> 3.3.0"
