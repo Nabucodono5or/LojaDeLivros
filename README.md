@@ -1,4 +1,4 @@
-# LojaDeLivros
+# Loja de Livros
 Aplicação que controla uma loja de livors por meio do terminal, com uso de arquivos para perpetuações dos dados. Haverá o controle de seu estoque, os clientes e vendas.
 
 ## Suporte
