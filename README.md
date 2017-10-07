@@ -10,6 +10,6 @@ Aplicação que controla uma loja de livors por meio do terminal, com uso de arq
 Antes de tudo você precisa ter o bundler instalado. Então da linha de comando execute `bundle install` para instalar as dependências.
 
 ## Funcionalidades
-Gerencia livros em arquivos, com informações do autor e ISBN.
-Gerencia revistas
+Gerencia livros em arquivos, com informações do autor e ISBN.  
+Gerencia revistas  
 Gerencia cd’s
